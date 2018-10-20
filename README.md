@@ -3,3 +3,4 @@ An Open-World head to head tank fight with simple ai terrain and advanced contro
 ## Lecture List
 * BT 01 Intro
 * BT 02 Game Design Document
+* BT 03 Setting up sourcetree to github
