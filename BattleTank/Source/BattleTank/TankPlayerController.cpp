@@ -24,8 +24,8 @@ void ATankPlayerController::AimTowardsCrosshair() {
 	FVector HitLocation; //OUT parameter dont bother to initialise out parameters
 	if (GetSightRayHitLocation(HitLocation)) { //has side effect , is going to line trace
 		
-			
 		GetControlledTank()->AimAt(HitLocation);
+
 	}
 }
 //Get World location of linetrace through crosshair, ture if hits landscape
