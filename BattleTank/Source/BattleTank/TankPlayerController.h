@@ -3,13 +3,13 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Tank.h"
+
 #include "GameFramework/PlayerController.h"
 #include "GameFramework/Controller.h"
 #include "Engine/World.h"
 
 #include "TankPlayerController.generated.h"
-
+class ATank;
 /**
  * 
  */

@@ -33,6 +33,9 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 			StartLocation,
 			HitLocation,
 			LaunchSpeed,
+		false,
+		0,
+		0,
 			ESuggestProjVelocityTraceOption::DoNotTrace
 		)
 	)
@@ -41,6 +44,9 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 	
 	auto AimDirection = OutLaunchVelocity.GetSafeNormal();
 	MoveBarrelTowards(AimDirection);
+	}
+	else {
+		UE_LOG(LogTemp,Warning,TEXT("Cant aim correctly"))
 	};
 }
 
@@ -53,6 +59,6 @@ void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection){
 	
 		//Move the barrel the right amount this frame
 		//Given max elevation speed , and frame time
-		Barrel->Elevate(5); //TODO Remove Magic Number
+		Barrel->Elevate(DeltaRotator.Pitch); //TODO Remove Magic Number
 	
 }
