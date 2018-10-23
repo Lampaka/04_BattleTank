@@ -2,7 +2,7 @@
 #include "TankAimingComponent.h"
 #include "Components/ActorComponent.h"
 #include "TankBarrel.h"
-
+#include "TankTurret.h"
 
 // Sets default values for this component's properties
 UTankAimingComponent::UTankAimingComponent()
@@ -18,6 +18,10 @@ UTankAimingComponent::UTankAimingComponent()
 void UTankAimingComponent::SetBarrelReference(UTankBarrel * BarrelToSet)
 {
 	Barrel = BarrelToSet;
+}
+void UTankAimingComponent::SetTurretReference(UTankTurret * TurretToSet)
+{
+	Turret = TurretToSet;
 }
 
 void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
@@ -59,6 +63,7 @@ void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection){
 	
 		//Move the barrel the right amount this frame
 		//Given max elevation speed , and frame time
-		Barrel->Elevate(DeltaRotator.Pitch); //TODO Remove Magic Number
+		Barrel->Elevate(DeltaRotator.Pitch);
+		Turret->RotateTurret(DeltaRotator.Yaw);
 	
 }
