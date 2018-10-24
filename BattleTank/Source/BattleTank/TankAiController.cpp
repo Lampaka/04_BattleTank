@@ -22,7 +22,7 @@ void ATankAiController::Tick(float DeltaTime)
 
 		//Aim Towards player
 		ControlledTank->AimAt(PlayerTank->GetActorLocation());
-		UE_LOG(LogTemp, Warning, TEXT("AI IS HERE"))
+		
 		//Fire when ready
 		ControlledTank->Fire(); //TODO dont fire everyframe
 	}
