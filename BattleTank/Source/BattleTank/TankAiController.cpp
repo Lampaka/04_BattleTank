@@ -18,8 +18,8 @@ void ATankAiController::Tick(float DeltaTime)
 		UE_LOG(LogTemp, Warning, TEXT("AIController not possesing a tank"))
 	}
 	if (PlayerTank) {
-		//TODO move towards player
-
+		//move towards player
+		MoveToActor(PlayerTank, AcceptanceRadius);
 		//Aim Towards player
 		ControlledTank->AimAt(PlayerTank->GetActorLocation());
 		

@@ -24,6 +24,7 @@ public:
 	virtual void BeginPlay() override;
 
 	virtual void Tick(float DeltaTime) override;
-
+	//how close can ai get before stopping
+	float AcceptanceRadius = 3000; 
 	
 };

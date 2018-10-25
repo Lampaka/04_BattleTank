@@ -7,7 +7,7 @@
 
 void UTankTracks::SetThrottle(float Throttle) {
 	auto Name = GetName();
-	UE_LOG(LogTemp, Warning, TEXT("%s value: %f"), *Name, Throttle)
+	
 
 		//TODO Clamp actual throttle value
 
